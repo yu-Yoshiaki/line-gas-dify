@@ -48,7 +48,7 @@ const body = e.postData.contents;
 
 ```javascript
 // 署名検証用の関数
-function isValidSignature(signature, body) {
+function isValidSignature(secret, signature, body) {
   const hash = Utilities.computeHmacSha256Signature(body, secret);
   const computedSignature = Utilities.base64Encode(hash);
   return signature === computedSignature;
@@ -60,7 +60,7 @@ function doPost(e) {
   const body = e.postData.contents;
 
   // 署名を検証
-  if (!isValidSignature(channelSecret, signature, body)) {
+  if (!isValidSignature(secret, signature, body)) {
     // 署名が無効な場合はエラーを返す
     return ContentService.createTextOutput(
       JSON.stringify({

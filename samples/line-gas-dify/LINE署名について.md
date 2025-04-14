@@ -12,15 +12,15 @@
 
 現状、GAS の URL がわかれば誰でもアクセスできてしまう。
 
-<img src="./image/access.png" />
+<img src="../../image/access.png" />
 
 つまり
 
-<img src="./image/yabai.png" />
+<img src="../../image/yabai.png" />
 
 ## そこで用いるのが LINE 署名
 
-<img src="./image/合言葉.png" />
+<img src="../../image/合言葉.png" />
 
 ## 実装方法
 
@@ -32,11 +32,11 @@
 
 #### チャネルシークレット
 
-<img src="./image/secret.png" width="400px" />
+<img src="../../image/secret.png" width="400px" />
 
 取得したら GAS のスクリプトプロパティに入れる。
 
-<img src="./image/property.png" width="400px" />
+<img src="../../image/property.png" width="400px" />
 
 #### X-Line-Signature
 

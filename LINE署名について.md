@@ -55,7 +55,9 @@ function isValidSignature(secret, signature, body) {
 }
 
 function doPost(e) {
-  const secret = getSecret("LINE_CHANNEL_SECRET");
+  const secret = PropertiesService.getScriptProperties().getProperty(
+    "LINE_CHANNEL_SECRET"
+  );
   const signature = e.headers["x-line-signature"];
   const body = e.postData.contents;
 

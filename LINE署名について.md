@@ -1,5 +1,11 @@
 # LINE 署名検証 は合言葉！
 
+> [!WARNING]
+> GAS では HTTP ヘッダーにアクセスできないため、この方法が使えない
+> https://qiita.com/nnhkrnk/items/581039e07954badd61ed
+>
+> https://creators-note.chatwork.com/entry/2017/12/20/163128
+
 ドキュメント参照: https://developers.line.biz/ja/docs/messaging-api/receiving-messages/#verify-signature
 
 ## なぜ署名検証が必要か？
@@ -35,13 +41,17 @@
 #### X-Line-Signature
 
 ```
+
 const signature = e.headers["x-line-signature"];
+
 ```
 
 #### リクエストボディ
 
 ```
+
 const body = e.postData.contents;
+
 ```
 
 ### 2. GAS での実装例
